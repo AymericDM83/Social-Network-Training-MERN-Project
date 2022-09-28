@@ -87,6 +87,7 @@ const UpdateProfil = () => {
                     );
                   }
                 }
+                return null;
               })}
             </ul>
           </div>
@@ -118,6 +119,7 @@ const UpdateProfil = () => {
                     );
                   }
                 }
+                return null;
               })}
             </ul>
           </div>
