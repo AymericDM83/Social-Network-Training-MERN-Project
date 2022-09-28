@@ -245,7 +245,15 @@
             font-family: $font-1;
           }
           span {
-            transform: translateX(6px);
+            transform: translateX(6px, 4px);
+            cursor: pointer;
+
+            img {
+              box-shadow: none;
+              height: 20px;
+              width: 20px;
+              margin-left: 5px;
+            }
           }
         }
 
