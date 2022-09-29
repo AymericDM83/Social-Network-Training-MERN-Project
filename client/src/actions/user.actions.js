@@ -6,6 +6,10 @@ export const UPDATE_BIO = "UPDATE_BIO";
 export const FOLLOW_USER = "FOLLOW_USER";
 export const UNFOLLOW_USER = "UNFOLLOW_USER";
 
+// errors
+
+export const GET_USER_ERRORS = "GET_USER_ERRORS";
+
 export const getUser = (uid) => {
   return (dispatch) => {
     return axios
@@ -28,7 +32,17 @@ export const uploadPicture = (data, id) => {
             dispatch({ type: UPLOAD_PICTURE, payload: res.data.picture });
           });
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        console.log(err);
+        if (err.response.data.errors) {
+          dispatch({
+            type: GET_USER_ERRORS,
+            payload: err.response.data.errors,
+          });
+        } else {
+          dispatch({ type: GET_USER_ERRORS, payload: "" });
+        }
+      });
   };
 };
 
