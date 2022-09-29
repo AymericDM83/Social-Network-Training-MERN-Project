@@ -16,15 +16,6 @@ const LeftNav = () => {
           <br />
 
           <NavLink
-            to="/trending"
-            className={({ isActive }) => (isActive ? "active-left-nav" : "")}
-          >
-            <img src="./img/icons/rocket.svg" alt="home" />
-          </NavLink>
-
-          <br />
-
-          <NavLink
             to="/profil"
             className={({ isActive }) => (isActive ? "active-left-nav" : "")}
           >
